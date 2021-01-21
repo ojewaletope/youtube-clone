@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-import {Paper, TextField} from "@material-ui/core";
-
 const SearchBar = ({onFormSubmit}) => {
     const [query, setQuery] = useState('');
     const handleSubmit = (e) => {

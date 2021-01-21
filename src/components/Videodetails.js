@@ -1,6 +1,4 @@
 import React from "react";
-import { Paper, Typography } from "@material-ui/core";
-
 const VideoDetail = ({ video }) => {
   if (!video) {
     return <div>Please search for movies...</div>;
