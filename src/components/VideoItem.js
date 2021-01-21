@@ -1,6 +1,6 @@
 import React from "react";
+import moment from "moment";
 
-import { Grid, Paper, Typography } from "@material-ui/core";
 
 const VideoItem = ({ video, selectVideo }) => {
   return (
@@ -13,9 +13,14 @@ const VideoItem = ({ video, selectVideo }) => {
           alt="thumbnail"
           src={video.snippet.thumbnails.medium.url}
         />
-        <h5 className="subtitle">
-          <b>{video.snippet.title}</b>
-        </h5>
+       <div>
+           <h5 className="subtitle">
+               <b>{video.snippet.title}</b>
+           </h5>
+           <span className="video-item-date">{moment(video.snippet.publishedAt, "YYYYMMDD").fromNow()}</span>
+           <p>{video.snippet.channelTitle}</p>
+           {/*<p>{video.snippet.description}</p>*/}
+       </div>
       </div>
     </div>
   );

@@ -3,13 +3,19 @@
     margin: 0;
     box-sizing: border-box;
 }
-body {
-    background: #333;
-    color: #fff;
-}
+
 :root {
     --color-light: #fff;
-    --color-dark: #333
+    --color-dark: #333;
+
+    --ff-primary: 'Poppins', sans-serif;
+    /*--ff-secondary: "Source Code Pro", monospace;*/
+}
+
+body {
+    background: #fafafa;
+    color: var(--color-dark);
+    font-family: var(--ff-primary);
 }
 
 img {
@@ -17,13 +23,34 @@ img {
 }
 .grid-container {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-gap: 1rem
 }
 
 .container {
     padding: 4rem;
 }
+
+.app-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-header:after {
+    content: "";
+    height: 2px;
+    color: var(--color-dark);
+    width: 11rem;
+    background: var(--color-dark);
+    text-align: center;
+    display: block;
+    margin-top: .5rem;
+}
+
 .form {
     margin-bottom: 1rem;
 }
@@ -41,12 +68,25 @@ img {
 
 .video-item {
     margin-bottom: 1rem;
+    border: 1px solid #fff;
+    padding: 1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0 , 0, 0.3);
+    border-radius: 10px;
+    background: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.video-item--wrapper {
-    display: flex;
-    align-items: center;
+.video-item-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 0.6rem;
     cursor: pointer;
+}
+
+.video-item-date {
+    text-transform: capitalize;
 }
 
 @media (max-width: 600px) {
@@ -58,5 +98,8 @@ img {
     }
     .video-wrapper {
         height: 50%;
+    }
+    .video-item-wrapper  {
+        grid-template-columns: 1fr;
     }
 }

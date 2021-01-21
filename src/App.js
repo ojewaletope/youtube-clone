@@ -19,6 +19,7 @@ const App = () => {
   }
   return (
     <div className='container'>
+        <h3 className="app-header">YouTube Clone App</h3>
         <SearchBar onFormSubmit={handleSubmit} />
         <div className="grid-container">
             <VideoDetail video={selectedVideo}/>
